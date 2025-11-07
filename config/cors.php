@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000')],
+    'allowed_origins' => [env('FRONTEND_URL', 'https://too-good-to-du3x7dmoo-juliana-nicole-abril-cabreras-projects.vercel.app/')],
 
     'allowed_origins_patterns' => [],
 
