@@ -6,22 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('user', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('usuario', function (Blueprint $table) {
+            $table->bigIncrements('id_usuario'); // clave primaria
+
+            // Campos principales
+            $table->string('email', 150)->unique();
+            $table->string('contrasenia');
+            $table->string('telefono', 20)->nullable();
+            $table->float('posicion_x')->nullable();
+            $table->float('posicion_y')->nullable();
+            $table->timestamp('fecha_registro')->useCurrent();
+            $table->string('tipo_usuario', 50)->default('cliente');
+
+            // Campo opcional si usas autenticación con token o recordar sesión
+            $table->rememberToken();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('usuario');
     }
 };

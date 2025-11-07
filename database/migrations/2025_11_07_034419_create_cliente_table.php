@@ -6,20 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('cliente', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('id_cliente'); // clave primaria personalizada
+            $table->string('nombre', 100);
+            $table->string('foto_perfil')->nullable();
+            $table->float('posicion_x')->nullable();
+            $table->float('posicion_y')->nullable();
+            $table->timestamps(); // si deseas conservar created_at y updated_at
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('cliente');
