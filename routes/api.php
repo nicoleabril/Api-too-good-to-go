@@ -18,9 +18,9 @@ use App\Http\Controllers\Api\Productos_ReservadosController;
 
 
 //RUTAS PARA INICIO Y CIERRE DE SESIÓN
-Route::post('/login', [AuthenticatedSessionController::class, 'store']);
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-    ->name('logout');
+//Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+//Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+//    ->name('logout');
 
 //RUTAS PARA CRUD DE USUARIOS
 Route::get('/usuarios', [UsersController::class, 'index']); // GET /api/v1/usuarios
